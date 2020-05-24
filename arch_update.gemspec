@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Toshiki"]
   spec.email         = ["toshiki.dev@protonmail.ch"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{Archlinux updater}
+  spec.description   = %q{desc}
   spec.homepage      = 'https://github.com/toshiki670/arch_update/wiki'
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
