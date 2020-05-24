@@ -2,3 +2,5 @@
 # frozen_string_literal: true
 
 require 'arch_update'
+
+ArchUpdate.start
