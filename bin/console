@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'arch_update'
+require 'pry'
+
+Pry.start
