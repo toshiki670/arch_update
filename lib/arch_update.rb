@@ -8,6 +8,12 @@ module ArchUpdate
   class Error < StandardError; end
 
   class << self
+    def start
+      parser = ArchUpdate::OptionParser.new
+      parser.build
+      parser.parse! ARGV
+    end
+
     def logger
       ArchUpdate::Logger.instance
     end
