@@ -16,7 +16,7 @@ module ArchUpdate
       init(STDOUT, level: ::Logger::Severity::DEBUG)
     end
 
-    def init(logdev = default_output, level: ::ArchUpdate::Logger::DEFAULT_LEVEL)
+    def init(logdev = default_output, level: DEFAULT_LEVEL)
       @base = ::Logger.new(logdev, level: level)
       nil
     end
