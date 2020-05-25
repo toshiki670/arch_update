@@ -27,14 +27,13 @@ module ArchUpdate
         '$ ' + cmd.to_s
       end
 
-      popen_logger(cmd)
+      status = popen_logger(cmd)
 
-      severity = $CHILD_STATUS.success? ? ::Logger::INFO : ::Logger::ERROR
+      severity = status.success? ? ::Logger::INFO : ::Logger::ERROR
       ArchUpdate.logger.add(severity) do
-        'Exit status code: ' + $CHILD_STATUS.exitstatus.to_s
+        'Exit status code: ' + status.exitstatus.to_s
       end
-
-      $CHILD_STATUS
+      status
     end
 
     def popen_logger(*args)
@@ -48,6 +47,7 @@ module ArchUpdate
           ArchUpdate.logger.error { line }
         end
       end
+      $CHILD_STATUS
     end
   end
 end
