@@ -27,27 +27,27 @@ module ArchUpdate
         '$ ' + cmd.to_s
       end
 
-      Open3.popen3(cmd) do |stdin, stdout, stderr, _|
-        stdin.close_write
+      popen_logger(cmd)
 
-        stdout.each_line do |line|
-          ArchUpdate.logger.info do
-            line
-          end
-        end
-
-        stderr.each_line do |line|
-          ArchUpdate.logger.error do
-            line
-          end
-        end
-      end
       severity = $CHILD_STATUS.success? ? ::Logger::INFO : ::Logger::ERROR
       ArchUpdate.logger.add(severity) do
         'Exit status code: ' + $CHILD_STATUS.exitstatus.to_s
       end
 
       $CHILD_STATUS
+    end
+
+    def popen_logger(*args)
+      Open3.popen3(*args) do |stdin, stdout, stderr, _|
+        stdin.close_write
+
+        stdout.each_line do |line|
+          ArchUpdate.logger.info { line }
+        end
+        stderr.each_line do |line|
+          ArchUpdate.logger.error { line }
+        end
+      end
     end
   end
 end
