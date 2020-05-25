@@ -4,7 +4,7 @@ require 'English'
 
 module ArchUpdate
   module Executable
-    def command?(cmd)
+    def executable?(cmd)
       `type '#{cmd}' > /dev/null 2>&1`.yield_self do
         $CHILD_STATUS.success?
       end
