@@ -41,10 +41,10 @@ module ArchUpdate
         stdin.close_write
 
         stdout.each_line do |line|
-          ArchUpdate.logger.info { line }
+          ArchUpdate.logger.info { line.chomp }
         end
         stderr.each_line do |line|
-          ArchUpdate.logger.error { line }
+          ArchUpdate.logger.error { line.chomp }
         end
       end
       $CHILD_STATUS
