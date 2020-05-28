@@ -13,11 +13,11 @@ module ArchUpdate
     attr_reader :base
 
     def initialize
-      init(STDOUT, level: ::Logger::Severity::DEBUG)
+      init(STDOUT, level: DEFAULT_LEVEL)
     end
 
-    def init(logdev = default_output, level: DEFAULT_LEVEL)
-      @base = ::Logger.new(logdev, level: level)
+    def init(...)
+      @base = ::Logger.new(...)
       nil
     end
 
