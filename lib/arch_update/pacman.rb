@@ -13,8 +13,11 @@ module ArchUpdate
     DESC = 'Update pacman.'
 
     def self.addon(option_parser)
-      opt.on(SHORT, LONG, DESC) do |value|
-        list if value
+      option_parser.on(SHORT, LONG, DESC) do |value|
+        if value
+          pacman = Pacman.new
+          pacman.list
+        end
       end
     end
 
