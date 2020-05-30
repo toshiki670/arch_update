@@ -13,9 +13,8 @@ RSpec.describe ArchUpdate::Pacman do
 
   let(:option_parser_mock) do
     double('Option parser mock').tap do |opm|
-      allow(opm).to receive(:on) 
+      allow(opm).to receive(:on)
     end
-
   end
 
   let(:instance) do
@@ -29,7 +28,6 @@ RSpec.describe ArchUpdate::Pacman do
     it 'is expected not to raise NotImplementedError' do
       expect { subject }.not_to raise_error
     end
-
   end
 
   describe '#list' do
