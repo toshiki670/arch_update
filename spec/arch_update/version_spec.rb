@@ -14,10 +14,10 @@ RSpec.describe 'ArchUpdate::VERSION' do
   %i[major_version minor_version revision_version].each do |version|
     context "when #{version}" do
       subject { method(version).call }
-      it "#{version} isn't nil" do
+      it "It isn't nil" do
         is_expected.to be_truthy
       end
-      it "#{version} is numeric" do
+      it "It's numeric" do
         is_expected.to be_match(/\A\d+\Z/)
       end
     end
