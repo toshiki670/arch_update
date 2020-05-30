@@ -2,8 +2,9 @@
 
 require 'English'
 
-RSpec.describe ArchUpdate::Pacman do
+# rubocop:disable Metrics/BlockLength
 
+RSpec.describe ArchUpdate::Pacman do
   let(:child_status_mock) do
     `:`.yield_self do
       $CHILD_STATUS
@@ -45,3 +46,4 @@ RSpec.describe ArchUpdate::Pacman do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

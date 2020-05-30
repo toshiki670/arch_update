@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
+
 RSpec.describe 'ArchUpdate::VERSION' do
   version_types = %i[
     major_version
@@ -41,3 +43,4 @@ RSpec.describe 'ArchUpdate::VERSION' do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
