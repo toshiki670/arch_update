@@ -8,7 +8,7 @@ module ArchUpdate
   class OptionParser < ::OptionParser
     PARSERS = [
       ArchUpdate::Pacman
-    ]
+    ].freeze
 
     def check
       PARSERS.each do |parser|
