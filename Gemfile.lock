@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     arch_update (0.1.0)
+      terminal-table (~> 1.8)
 
 GEM
   remote: https://rubygems.org/
@@ -42,6 +43,8 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
     ruby-progressbar (1.10.1)
+    terminal-table (1.8.0)
+      unicode-display_width (~> 1.1, >= 1.1.1)
     unicode-display_width (1.7.0)
 
 PLATFORMS
