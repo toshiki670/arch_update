@@ -1,19 +1,30 @@
 # frozen_string_literal: true
 
 RSpec.describe 'ArchUpdate::VERSION' do
-  let(:split_version) { ArchUpdate::VERSION.split('.') }
-  let(:major_version) { split_version[0] }
-  let(:minor_version) { split_version[1] }
-  let(:revision_version) { split_version[2] }
-  let(:invalid_last_space) { split_version[3] }
+  version_types = %i[
+    major_version
+    minor_version
+    revision_version
+    invalid_last_space
+  ].freeze
 
-  it 'has a version number' do
-    expect(ArchUpdate::VERSION).to be_truthy
+  let(:version) { ArchUpdate::VERSION }
+  let(:split_version) { version.split('.') }
+
+  version_types.each_with_index do |version_type, idx|
+    let(version_type) { split_version[idx] }
   end
 
-  %i[major_version minor_version revision_version].each do |version|
-    context "when #{version}" do
-      subject { method(version).call }
+  context 'when full version types' do
+    subject { version }
+    it "It's version exists" do
+      is_expected.to be_truthy
+    end
+  end
+
+  version_types[..-2].each do |version_type|
+    context "when #{version_type}" do
+      subject { method(version_type).call }
       it "It isn't nil" do
         is_expected.to be_truthy
       end
