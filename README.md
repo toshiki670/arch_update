@@ -1,3 +1,5 @@
+<a href="LICENSE" alt="MIT License"><img alt="GitHub" src="https://img.shields.io/github/license/toshiki670/arch_update?style=flat-square"></a>
+
 # ArchUpdate
 ## Installation
 
