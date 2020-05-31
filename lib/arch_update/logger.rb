@@ -5,6 +5,7 @@ require 'singleton'
 require 'logger'
 
 module ArchUpdate
+  # Singleton Logger
   class Logger < Delegator
     include Singleton
 

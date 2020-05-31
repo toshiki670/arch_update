@@ -7,6 +7,7 @@ require 'arch_update/option_parser'
 require 'arch_update/pacman'
 require 'arch_update/version'
 
+# This module's static methods are the entry point.
 module ArchUpdate
   class Error < StandardError; end
 

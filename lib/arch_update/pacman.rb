@@ -4,6 +4,7 @@ require 'arch_update/executable'
 require 'arch_update/option_parseable'
 
 module ArchUpdate
+  # Pacman Updater
   class Pacman
     include ArchUpdate::Executable
     include ArchUpdate::OptionParseable
