@@ -1,5 +1,6 @@
 <a href="LICENSE" alt="MIT License"><img alt="GitHub" src="https://img.shields.io/github/license/toshiki670/arch_update?style=flat-square"></a>
-<a href="https://github.com/toshiki670/arch_update/actions" alt="Github Action"><img alt="GitHub" src="https://img.shields.io/github/workflow/status/toshiki670/arch_update/Ruby?style=flat-square"></a>
+<a href="https://github.com/toshiki670/arch_update/actions" alt="Rspec Action"><img alt="GitHub" src="https://img.shields.io/github/workflow/status/toshiki670/arch_update/Rspec?label=Rspec&style=flat-square"></a>
+<a href="https://github.com/toshiki670/arch_update/actions" alt="Rubocop Action"><img alt="GitHub" src="https://img.shields.io/github/workflow/status/toshiki670/arch_update/Rubocop?label=Rubocop&style=flat-square"></a>
 
 # ArchUpdate
 ## Installation
