@@ -23,7 +23,7 @@ module ArchUpdate
 
       PARSERS.each do |parser|
         parser.addon self
-      end 
+      end
     end
   end
 end

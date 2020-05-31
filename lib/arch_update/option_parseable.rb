@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ArchUpdate
-  class OptionParseableError < NotImplementedError; end
+  class OptionParseableError < StandardError; end
 
   module OptionParseable
     def self.included(base)
