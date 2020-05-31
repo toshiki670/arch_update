@@ -2,6 +2,8 @@
 
 require 'arch_update/executable'
 
+# rubocop:disable Metrics/BlockLength
+
 RSpec.describe ArchUpdate::Executable do
   class Klass
     include ArchUpdate::Executable
@@ -28,4 +30,11 @@ RSpec.describe ArchUpdate::Executable do
       end
     end
   end
+  describe '#execute_table(cmd)' do
+  end
+  describe '#execute_show(cmd)' do
+  end
+  describe '#execute_logger(cmd)' do
+  end
 end
+# rubocop:enable Metrics/BlockLength
