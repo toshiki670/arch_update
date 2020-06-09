@@ -7,9 +7,9 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 6
-Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'lib/arch_update/executable.rb'
-    - 'lib/arch_update/option_parseable.rb'
+# Style/Documentation:
+#   Exclude:
+#     - 'spec/**/*'
+#     - 'test/**/*'
+#     - 'lib/arch_update/executable.rb'
+#     - 'lib/arch_update/option_parseable.rb'
