@@ -8,6 +8,7 @@ require 'open3'
 module ArchUpdate
   class ExecuteError < StandardError; end
 
+  # Execute tools
   class Execute
     include CmdExecutable
 
@@ -40,7 +41,8 @@ module ArchUpdate
     end
 
     def execute_table(title: nil, headings: nil, &block)
-
+      p title
+      p headings
       block.call(cmd_result, table) if block_given?
     end
 
