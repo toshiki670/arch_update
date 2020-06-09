@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'arch_update/executable'
+require 'arch_update/execute'
 require 'arch_update/logger'
 require 'arch_update/option_parseable'
 require 'arch_update/option_parser'
