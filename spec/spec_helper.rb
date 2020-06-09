@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require 'bundler/setup'
 require 'arch_update'
+require 'bundler/setup'
+require 'English'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

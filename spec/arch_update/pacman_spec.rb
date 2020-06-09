@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require 'English'
-require 'arch_update/pacman'
+require 'spec_helper'
 
 # rubocop:disable Metrics/BlockLength
 

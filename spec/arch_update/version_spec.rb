@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'spec_helper'
+
 # rubocop:disable Metrics/BlockLength
 
 RSpec.describe 'ArchUpdate::VERSION' do
