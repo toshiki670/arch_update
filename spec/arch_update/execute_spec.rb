@@ -2,10 +2,7 @@
 
 require 'spec_helper'
 
-# rubocop:disable Metrics/BlockLength
-
 RSpec.describe ArchUpdate::Execute do
-
   let(:instance) { ArchUpdate::Execute.new(command) }
 
   describe '#execute(cmd, &block)' do
@@ -14,7 +11,6 @@ RSpec.describe ArchUpdate::Execute do
   describe '#execute_table(cmd)' do
     subject { instance.execute_table(cmd) }
     context '' do
-
     end
   end
   describe '#execute_show(cmd)' do
@@ -24,4 +20,3 @@ RSpec.describe ArchUpdate::Execute do
     subject { instance }
   end
 end
-# rubocop:enable Metrics/BlockLength
