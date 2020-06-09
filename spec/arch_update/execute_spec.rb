@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'arch_update/execute'
+require 'spec_helper'
 
 # rubocop:disable Metrics/BlockLength
 
