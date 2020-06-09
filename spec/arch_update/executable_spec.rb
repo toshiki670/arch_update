@@ -30,11 +30,21 @@ RSpec.describe ArchUpdate::Executable do
       end
     end
   end
+  describe '#execute(cmd, &block)' do
+    subject { instance }
+  end
   describe '#execute_table(cmd)' do
+    subject { instance.execute_table(cmd) }
+    context '' do
+
+    end
   end
   describe '#execute_show(cmd)' do
+    subject { instance }
   end
   describe '#execute_logger(cmd)' do
+    subject { instance }
   end
 end
+
 # rubocop:enable Metrics/BlockLength

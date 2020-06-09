@@ -21,19 +21,22 @@ module ArchUpdate
     end
 
     def execute(cmd)
-      raise ArchUpdate::ExecutableError unless executable?(cmd)
+      before(cmd)
 
-      ArchUpdate.logger.info do
-        '$ ' + cmd.to_s
+      Open3.popen3(*args) do |stdin, stdout, stderr, _|
+        stdin.close_write
+
+        stdout.each_line do |line|
+          ArchUpdate.logger.info { line.chomp }
+        end
+        stderr.each_line do |line|
+          ArchUpdate.logger.error { line.chomp }
+        end
       end
 
-      status = popen_logger(cmd)
+      after(status)
 
-      severity = status.success? ? ::Logger::INFO : ::Logger::ERROR
-      ArchUpdate.logger.add(severity) do
-        'Exit status code: ' + status.exitstatus.to_s
-      end
-      status
+      $CHILD_STATUS
     end
 
     def popen_logger(*args)
@@ -48,6 +51,28 @@ module ArchUpdate
         end
       end
       $CHILD_STATUS
+    end
+
+    def execute_table(cmd, title: nil, headings: nil, &block)
+
+      block.call(cmd_result, table) if block_given?
+    end
+
+    private
+
+    def before(cmd)
+      raise ArchUpdate::ExecutableError unless executable?(cmd)
+
+      ArchUpdate.logger.info do
+        '$ ' + cmd.to_s
+      end
+    end
+
+    def after(status)
+      severity = status.success? ? ::Logger::INFO : ::Logger::ERROR
+      ArchUpdate.logger.add(severity) do
+        'Exit status code: ' + status.exitstatus.to_s
+      end
     end
   end
 end
